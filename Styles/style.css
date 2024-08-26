@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Sankofa+Display&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.logoone{
+    width:5%;
+}
+
+.logoalura{
+    width: 6%;
+}
+
+.infoimg{
+    width: 3%;
+}
+    
+
+.check{
+    width: 2%;
+}
+
+
+/*---AJUSTE GENERAL DE LOS ESPACIOS PADRES ----*/
+
+.stylebody > *{
+    box-shadow: 2px 2px 10px  rgba(51, 51, 51, 0.74); 
+    border-radius: 1rem;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.main > *{
+    box-shadow: 1px 1px 5px  rgba(51, 51, 51, 0.74); 
+    border-radius: 0.5rem;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.stylebody {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: 0.2fr 0.2fr 5fr 0.2fr;
+
+    .header {
+        grid-area: header;
+        
+    }
+
+    .nav {
+        grid-area: nav;
+        font-size: 85%;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .main {
+        grid-area: main;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: rgb(255, 255, 255);
+    }
+
+    @media (min-width:768px) {
+        grid-template-areas: 
+            "header header"
+            "nav nav"
+            "main main"
+            "footer footer";
+        grid-template-columns: 400px auto;
+        grid-template-rows: 7% 5% auto 5%;
+    }
+}
+
+
+
+
+
+/*---AJUSTE DEL CONTENIDO CENTRAL ----*/
+
+.main {
+    display: grid;
+    gap: 10px;
+    
+    grid-template-areas: 
+        "izquierdo"
+        "centro"
+        "derecho";
+    grid-template-rows: 2fr 0.2fr 2fr;
+
+    .izquierdo {
+        grid-area: izquierdo;
+        background-color: rgba(207, 201, 201, 0.8);
+    }
+
+    .centro {
+        grid-area: centro;
+        background-color: transparent;
+    }
+
+    .derecho {
+        grid-area: derecho;
+        background-color: rgba(207, 201, 201, 0.8);
+    }
+
+    @media (min-width:768px) {
+        grid-template-areas: 
+            "izquierdo centro derecho";
+        grid-template-columns: 4fr 1fr 4fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+
+
+.header, .nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    /*font-size: clamp(minimum, preferred, maximum);
+    preferred: Es el tamaño de fuente preferido, que se ajusta dinámicamente. 
+    Puede depender del ancho de la ventana gráfica (vw), la altura (vh), o cualquier otro valor relativo.*/
+
+.Titulos{
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: "Sankofa Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;;
+}
+
+
+.enlacenav{
+    text-decoration: none;
+    color: #191970;
+}
+
+/*--- AJUSTE IZQUIERDA ----*/
+
+.izquierdo > *{
+    box-shadow: 2px 2px 10px  rgba(51, 51, 51, 0.74); 
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.izquierdo {
+    display: grid;
+    gap: 5px;
+    grid-template-areas: 
+        "IngTexto"
+        "mensaje"
+        "Botones";
+    grid-template-rows: 2.8fr 0.1fr 0.4fr;
+}
+
+.ingtxt {
+    grid-area: IngTexto;
+    display: flex;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.btns {
+    grid-area: Botones;
+    display: flex;
+    align-items: left;
+    justify-content:space-around;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.2rem;
+    
+}
+
+.info {
+    grid-area: mensaje;
+    display: flex;
+    gap: 1%;
+    align-items: center;
+    font-size: 85%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1%;
+    
+}
+
+@media (min-width: 768px) {
+    .izquierdo{
+        grid-template-areas: 
+            "IngTexto IngTexto"
+            "mensaje mensaje"
+            "Botones Botones";
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 0.2fr 0.4fr;
+    }
+}
+
+/*--- AJUSTE CENTRO ----*/
+
+.centro > * {
+    box-shadow: 2px 2px 10px  rgba(51, 51, 51, 0.74); 
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10%;
+    grid-template-areas: 
+        "Imagen"
+        "btn";
+    grid-template-rows: 4fr 1fr;
+}
+
+.clean {
+    grid-area: Imagen;
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    background-color: transparent; /* Sin fondo */
+    width: 5rem;
+    box-shadow: none; /* Sin sombra */
+    border: none; /* Sin borde */
+    margin: 0; /* Asegura que no haya margen extra */
+}
+
+.btnclean {
+    grid-area: btn;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .centro {
+        grid-template-areas: 
+            "Imagen Imagen"
+            "btn btn";
+        grid-template-rows: 80% 7%;
+    }
+}
+
+/*--- AJUSTE DERECHA ----*/
+
+.derecho > *{
+    box-shadow: 2px 2px 10px  rgba(51, 51, 51, 0.74); 
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.derecho {
+    display: grid;
+    gap: 5px;
+    grid-template-areas: 
+        "IngTexto"
+        "mensaje";
+    grid-template-rows: 4fr 1fr;
+}
+
+.ingtxt1 {
+    grid-area: IngTexto;
+    display: flex;
+    text-align: left;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.Encpmensaje {
+    grid-area: mensaje;
+    display: flex;
+    gap: 1%;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 85%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1%;
+    
+}
+
+@media (min-width: 768px) {
+    .derecho{
+        grid-template-areas: 
+            "IngTexto IngTexto"
+            "mensaje mensaje";
+        grid-template-columns: 80%;
+        grid-template-rows: 87% 13%;
+    }
+}
+
+
+
+/* Diseño de botones */
+
+.btn1, .btn2  {
+    display: flex; /* Usamos flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    /* Tamaño uniforme y responsive */
+    width: 100%;
+    max-width: 40%; /* Ajusta el ancho máximo según sea necesario */
+    height: 90%; /* Altura uniforme */
+    text-align: center;
+}
+
+/* Diseño de botones */
+
+.btnclean {
+    display: flex; /* Usamos flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    /* Tamaño uniforme y responsive */
+    width: 100%;
+    max-width: 100%; /* Ajusta el ancho máximo según sea necesario */
+    text-align: center;
+}
+
+/* Diseño de botones */
+
+.btncopy {
+    display: flex; /* Usamos flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    /* Tamaño uniforme y responsive */
+    width: 20%;
+    max-width: 100%; /* Ajusta el ancho máximo según sea necesario */
+    height: 60%; /* Altura uniforme */
+    text-align: center;
+}
+
+
+/* Especificaciones de btn1 */
+.btn1 {
+    color: white;
+    background-color: #191970;
+    border: none;
+}
+
+.btn1:hover {
+    background-color: #ffffff;
+    color: #191970;
+    transform: translateY(-2px);
+}
+
+.btn1:active {
+    background-color: #ffffff;
+    color: #191970;
+    transform: translateY(1px);
+}
+
+/*Especificaciones btncopy*/
+.btncopy {
+    color: white;
+    background-color: #191970;
+    border: none;
+}
+
+.btncopy:hover {
+    background-color: #ffffff;
+    color: #191970;
+    transform: translateY(-2px);
+}
+
+.btncopy:active {
+    background-color: #ffffff;
+    color: #191970;
+    transform: translateY(1px);
+}
+
+/* Especificaciones de btn2 */
+.btn2 {
+    color: #191970;
+    background-color: white;
+    border: none;
+}
+
+.btn2:hover {
+    background-color: #191970;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn2:active {
+    background-color: #191970;
+    color: white;
+    transform: translateY(1px);
+}
+
+/* Especificaciones de btnclean */
+.btnclean {
+    background-color: transparent;
+    color: #197033;
+    border: 2px solid #197033;
+}
+
+.btnclean:hover {
+    background-color: #3a7a35;
+    color: white;
+    border: none;
+    transform: translateY(-2px);
+}
+
+.btnclean:active {
+    background-color: #3a7a35;
+    color: white;
+    border: none;
+    transform: translateY(1px);
+}
+
+.copyespace {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    background-color: #f5f5f5; 
+    padding: 1.5%; 
+    border-radius: 8px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+    font-size: 1rem; /* Tamaño de fuente ligeramente mayor */
+    color: #333; /* Color de texto oscuro para mejor contraste */
+    text-align: center; /* Centra el texto */
+    flex-grow: 1;
+}
+
+/* Ocultar el mensaje de copia por defecto */
+.mjscopy, .check {
+    display: none;
+}
