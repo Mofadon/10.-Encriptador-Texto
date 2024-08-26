@@ -78,6 +78,10 @@ function desencriptarTexto(texto) {
     }, texto);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 // Función para copiar texto al portapapeles
 function copiarTexto() {
     const texto = document.querySelector('.ingtxt1').textContent.trim();
