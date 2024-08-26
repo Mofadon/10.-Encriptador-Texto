@@ -56,7 +56,7 @@ function validarTexto(texto) {
     return true;
 }
 
-// Función para encriptar o desencriptar texto
+// Función para encriptar texto
 function procesarTexto(encriptar) {
     const texto = textarea.value.trim();
     if (!texto) {
@@ -70,6 +70,14 @@ function procesarTexto(encriptar) {
     document.querySelector('.ingtxt1').textContent = resultado;
     copyespace.style.display = 'flex'; // Asegúrate de que este estilo esté definido en tu CSS
 }
+
+// Función para desencriptar texto
+function desencriptarTexto(texto) {
+    return reglasEncriptacion.reduce((textoDesencriptado, regla) => {
+        return textoDesencriptado.replace(new RegExp(regla.reemplazo, 'g'), regla.letra);
+    }, texto);
+}
+
 
 // Función para copiar texto al portapapeles
 function copiarTexto() {
